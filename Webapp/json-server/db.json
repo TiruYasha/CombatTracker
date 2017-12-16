@@ -1,0 +1,12 @@
+{
+    "encounters": [
+        {
+            "id": 1,
+            "name": "Goblins"
+        },
+        {
+            "id": 2,
+            "name": "Kobolds"
+        }
+    ]
+}

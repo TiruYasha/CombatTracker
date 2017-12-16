@@ -27,12 +27,6 @@ describe('Service: EncounterService', () => {
             this.httpMock = httpMock;
         }));
 
-    it('getEncounters() should query current service url', () => {
-        this.sut.getEncounters().subscribe();
-
-        this.httpMock.expectOne('/api/encounters');
-    });
-
     it('getEncounters() expects a get request and returns encounters', () => {
         const encountersData: Encounter[] = [
             {
@@ -49,7 +43,7 @@ describe('Service: EncounterService', () => {
             expect(encounters).toEqual(encountersData);
         });
 
-        const req = this.httpMock.expectOne('/api/encounters');
+        const req = this.httpMock.expectOne('api/encounters');
 
         expect(req.request.method).toEqual('GET');
 

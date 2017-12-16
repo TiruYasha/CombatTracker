@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EncounterService } from '../shared/encounter.service';
+import { Encounter } from '../shared/encounter';
 
 @Component({
     selector: 'encounter-list',
@@ -6,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./encounter-list.component.css']
 })
 export class EncounterListComponent implements OnInit {
-    constructor() { }
+    encounters: Encounter[];
 
-    ngOnInit() { }
+    constructor(private encounterService: EncounterService) { }
+
+    ngOnInit() {
+        this.encounterService.getEncounters()
+            .subscribe((encounters) => this.encounters = encounters);
+     }
 }

@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http/src/module';
+import { EncounterService } from './encounters/shared/encounter.service';
+import { ConfigService } from './shared/config.service';
 
 
 @NgModule({
@@ -10,9 +13,13 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    EncounterService,
+    ConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

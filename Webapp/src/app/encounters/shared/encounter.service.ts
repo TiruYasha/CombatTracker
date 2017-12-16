@@ -4,14 +4,15 @@ import { Encounter } from './encounter';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class EncounterService {
 
     constructor(private http: HttpClient) { }
 
-    getEncounters(): Observable<Encounter> {
-        return this.http.get<Encounter[]>('/api/encounters')
+    getEncounters(): Observable<Encounter[]> {
+        return this.http.get<Encounter[]>(environment.apiEndpoint + 'api/encounters')
             .pipe(
             tap(encounters => console.log(encounters)),
             catchError(this.handleError('getEncounters', null))
