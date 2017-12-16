@@ -14,6 +14,9 @@ export class EncounterListComponent implements OnInit {
 
     ngOnInit() {
         this.encounterService.getEncounters()
-            .subscribe((encounters) => this.encounters = encounters);
+            .subscribe((encounters) => {
+                this.encounters = encounters;
+                console.log(encounters);
+            });
      }
 }

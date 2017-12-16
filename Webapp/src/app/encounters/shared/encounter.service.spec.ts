@@ -43,7 +43,7 @@ describe('Service: EncounterService', () => {
             expect(encounters).toEqual(encountersData);
         });
 
-        const req = this.httpMock.expectOne('api/encounters');
+        const req = this.httpMock.expectOne('encounters');
 
         expect(req.request.method).toEqual('GET');
 

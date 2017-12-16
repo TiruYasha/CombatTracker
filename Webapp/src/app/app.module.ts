@@ -1,24 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http/src/module';
+import { HttpClientModule } from '@angular/common/http';
 import { EncounterService } from './encounters/shared/encounter.service';
-import { ConfigService } from './shared/config.service';
-
+import { EncounterListComponent } from './encounters/encounter-list/encounter-list.component';
+import { MaterialModule } from './material.module';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EncounterListComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule
   ],
   providers: [
-    EncounterService,
-    ConfigService
+    EncounterService
   ],
   bootstrap: [AppComponent]
 })

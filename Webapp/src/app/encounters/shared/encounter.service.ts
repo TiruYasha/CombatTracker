@@ -12,7 +12,7 @@ export class EncounterService {
     constructor(private http: HttpClient) { }
 
     getEncounters(): Observable<Encounter[]> {
-        return this.http.get<Encounter[]>(environment.apiEndpoint + 'api/encounters')
+        return this.http.get<Encounter[]>(environment.apiEndpoint + 'encounters')
             .pipe(
             tap(encounters => console.log(encounters)),
             catchError(this.handleError('getEncounters', null))
