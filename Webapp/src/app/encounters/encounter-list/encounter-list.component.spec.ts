@@ -1,3 +1,4 @@
+import {} from 'jasmine';
 import { EncounterListComponent } from './encounter-list.component';
 import { TestBed, ComponentFixture, async, fakeAsync, tick } from '@angular/core/testing';
 import { EncounterService } from '../shared/encounter.service';
@@ -8,6 +9,7 @@ import { Encounter } from '../shared/encounter';
 
 import 'rxjs/add/observable/of';
 import { take } from 'rxjs/operators/take';
+import { MaterialModule } from '../../material.module';
 
 describe('EncounterListComponent', () => {
 
@@ -19,7 +21,8 @@ describe('EncounterListComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
+            imports: [HttpClientTestingModule,
+                MaterialModule],
             declarations: [EncounterListComponent],
             providers: [EncounterService]
         });

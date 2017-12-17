@@ -51,4 +51,20 @@ describe('Service: EncounterService', () => {
 
         this.httpMock.verify();
     });
+
+    it('getEncounter(id) expects a get request and returns a encounter', () => {
+        const encountersData: Encounter = { id: 1, name: 'Goblins' };
+
+        this.sut.getEncounter(1).subscribe((encounter: Encounter) => {
+            expect(encounter).toEqual(encounter);
+        });
+
+        const req = this.httpMock.expectOne('encounter/1');
+
+        expect(req.request.method).toEqual('GET');
+
+        req.flush(encountersData);
+
+        this.httpMock.verify();
+    });
 });

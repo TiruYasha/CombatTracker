@@ -7,6 +7,7 @@ import { EncounterService } from './encounters/shared/encounter.service';
 import { EncounterListComponent } from './encounters/encounter-list/encounter-list.component';
 import { MaterialModule } from './material.module';
 import 'hammerjs';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import 'hammerjs';
   imports: [
     BrowserModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   providers: [
     EncounterService

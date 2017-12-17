@@ -19,6 +19,14 @@ export class EncounterService {
             );
     }
 
+    getEncounter(id: number): Observable<Encounter> {
+        return this.http.get<Encounter>(environment.apiEndpoint + 'encounter/' + id)
+            .pipe(
+            tap(encounter => console.log(encounter)),
+            catchError(this.handleError('getEncounter', null))
+            );
+    }
+
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
 
