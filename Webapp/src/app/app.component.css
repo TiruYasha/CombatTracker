@@ -1,14 +1,9 @@
-#content{
+#container{
     position: absolute;
     top: 64px;
     bottom: 0;
     right: 0;
     left: 0;
-}
-
-#master{
-    width: 480px;
-    height: 100%;
 }
 
 mat-tab-group{

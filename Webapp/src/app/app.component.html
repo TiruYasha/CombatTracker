@@ -1,17 +1,23 @@
-<mat-toolbar class="mat-elevation-z4">
-    <button mat-button matTooltip="text">CombatTracker</button>
+<mat-toolbar>
+    <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-button>CombatTracker</button>
 </mat-toolbar>
-<div id="content">
-    <div id="master"  class="mat-elevation-z2">
-        <mat-toolbar>
+<mat-sidenav-container id="container" autosize>
+    <mat-sidenav #drawer mode="side" opened>
+        <mat-toolbar class="mat-elevation-z2">
             Stuff
         </mat-toolbar>
         <mat-tab-group>
             <mat-tab label="Encounters">
-                <encounter-list></encounter-list>
+                <combat-encounter-list></combat-encounter-list>
             </mat-tab>
             <mat-tab label="Tab3"></mat-tab>
             <mat-tab label="TabTabHeader3"></mat-tab>
         </mat-tab-group>
-    </div>
-</div>
+    </mat-sidenav>
+    <mat-sidenav-content id="detail">
+        <combat-encounter-detail></combat-encounter-detail>
+    </mat-sidenav-content>
+</mat-sidenav-container>

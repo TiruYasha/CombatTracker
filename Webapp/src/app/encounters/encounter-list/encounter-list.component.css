@@ -1,0 +1,10 @@
+
+mat-nav-list{
+    height: 100%;
+}
+
+.fab-add-encounter{
+    position: absolute;
+    bottom: 24px;
+    right: 41px;
+}

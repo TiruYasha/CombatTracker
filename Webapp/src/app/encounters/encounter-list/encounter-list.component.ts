@@ -3,7 +3,7 @@ import { EncounterService } from '../shared/encounter.service';
 import { Encounter } from '../shared/encounter';
 
 @Component({
-    selector: 'encounter-list',
+    selector: 'combat-encounter-list',
     templateUrl: './encounter-list.component.html',
     styleUrls: ['./encounter-list.component.css']
 })
